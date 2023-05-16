@@ -2,7 +2,67 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
+@layer base{
+  .powderGrey{
+    color: #8F92A6;
+  }
+
+  .darkGrey{
+    color: #383840;
+  }
+
+  .mediumGrey{
+    color: #656573;
+  }
+
+  .lightGrey{
+    color: #D1D0D9;
+  }
+
+  .offWhite{
+    color: #F0F0F2;
+  }
+
+  .darkBlue{
+    color: #2A3E59;
+  }
+
+  .lightBlue{
+    color: #54728C;
+  }
+
+  .bg-lightBlue{
+    background-color: #54728C;
+  }
+  
+  .bg-darkBlue{
+    background-color: #2A3E59;
+  }
+
+  .bg-powderGrey{
+    background-color: #8F92A6;
+  }
+
+  .bg-darkGrey{
+    background-color: #383840;
+  }
+
+  .bg-mediumGrey{
+    background-color: #656573;
+  }
+
+  .bg-lightGrey{
+    background-color: #EFEDF7;
+  }
+
+  .bg-offWhite{
+    background-color: #F0F0F2;
+  }
+
+  
+}
+
+/* :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
@@ -14,14 +74,20 @@
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
   }
-}
+} */
 
-body {
+
+
+
+
+/* body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
       to bottom,
       transparent,
-      rgb(var(--background-end-rgb))
+      rgb(var(--background-end-rgb)),
+      no-repeat
+
     )
     rgb(var(--background-start-rgb));
-}
+} */
