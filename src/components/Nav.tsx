@@ -75,7 +75,7 @@ const Nav = () => {
             >
               <div>
                 <div className="flex w-full items-center justify-between">
-                    <h1 className="text-2xl font-bold pr-5">Scott Croin</h1>
+                    <h1 className="text-2xl darkBlue font-bold pr-5">Scott Croin</h1>
                   <div 
                     onClick={handleNav}
                     className="rounded-full shadow-lg shadow-gray-400 cursor-pointer p-3"
@@ -106,7 +106,7 @@ const Nav = () => {
                   </Link>
                 </ul>
                 <div className="pt-[20%] flex-1">
-                  <p className="tracking-widest uppercase text-[#5651e5] border-b border-gray-400 my-4 font-semibold">
+                  <p className="tracking-widest uppercase darkBlue border-b border-gray-400 my-4 font-semibold">
                     Socials
                   </p>
                   <div className="flex items-center justify-between my-4 w-full  pt-[10%]">
