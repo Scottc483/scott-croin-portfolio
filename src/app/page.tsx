@@ -1,24 +1,30 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import KUTE from "kute.js";
 import DrawBlob, { BlobType } from "blob-animated";
 import bridgeImage from "../images/bridge.jpg";
 
 export default function Home() {
+
+  const [imageLoaded, setImageLoaded] = useState(false);
+
+
   useEffect(() => {
     const canvas = document.getElementById("canvasExample") as HTMLCanvasElement;
     const heroImage = document.getElementById("heroImage") as HTMLImageElement;
-    const Blob = new DrawBlob({
-      canvas: canvas,
-      speed: 500,
-      scramble: 0.1,
-      maskedElement: heroImage,
-      // color: "#034001",
-    });
-  }, []);
 
+    if (imageLoaded) {
+      const Blob = new DrawBlob({
+        canvas: canvas,
+        speed: 500,
+        scramble: 0.1,
+        maskedElement: heroImage,
+        // color: "#034001",
+      });
+    }
+  }, [imageLoaded]);
   return (
     <>
       <section className=" flex flex-1 mx-auto pt-20 bg-offWhite justify-center overflow-hidden h-full ">
@@ -30,6 +36,7 @@ export default function Home() {
             width={500}
             height={500}
             className="hidden"
+            onLoad={() => setImageLoaded(true)}
           />
           <canvas id="canvasExample" className="w-full max-w-2xl" />
           <div className="z-[100] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
