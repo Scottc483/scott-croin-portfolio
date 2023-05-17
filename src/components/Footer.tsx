@@ -1,9 +1,13 @@
-import React from 'react'
-
+import React from "react";
+import Head from "next/head";
 const Footer = () => {
   return (
-    <div>Footer</div>
-  )
-}
+    <footer>
+      <div className="w-full h-20 bg-darkGrey flex justify-center items-center">
+        <p className="offWhite text-sm">© 2021 Scott Croin</p>
+      </div>
+    </footer>
+  );
+};
 
-export default Footer
+export default Footer;

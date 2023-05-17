@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import Head from "next/head";
 const inter = Inter({ subsets: ["latin"] });
 import Nav from "../components/Nav";
+import Footer from "@/components/Footer";
 
 export const metadata = {
   title: "Scott Croin | Web Developer",
@@ -48,6 +49,7 @@ export default function RootLayout({
         <main className="">
           <Nav />
           {children}
+          <Footer />
         </main>
       </body>
     </html>

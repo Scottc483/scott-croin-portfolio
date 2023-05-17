@@ -94,7 +94,7 @@ const Nav = () => {
   >
               <div>
                 <div className="flex w-full items-center justify-between">
-                    <h1 className="text-2xl darkBlue font-bold pr-5">Scott Croin</h1>
+                    <h1 className="text-2xl md:text-4xl darkBlue font-bold pr-5">Scott Croin</h1>
                     {/* Close button  */}
                   {/* <div 
                     onClick={handleNav}
@@ -107,20 +107,20 @@ const Nav = () => {
               <div className="py-4 flex flex-col">
                 <ul className="uppercase">
                   <Link href="/" onClick={handleNav}>
-                    <li className="py-4 text-sm font-semibold">Home</li>
+                    <li className="py-4 text-sm sm:text-base md:text-lg font-semibold">Home</li>
                   </Link>
                   <Link href="/about" onClick={handleNav}>
-                    <li className="py-4 text-sm font-semibold">About</li>
+                    <li className="py-4 text-sm sm:text-base md:text-lg font-semibold">About</li>
                   </Link>
                   <Link href="/projects" onClick={handleNav}>
-                    <li className="py-4 text-sm font-semibold">Projects</li>
+                    <li className="py-4 text-sm sm:text-base md:text-lg font-semibold">Projects</li>
                   </Link>
                   <Link href="/contact" onClick={handleNav}>
-                    <li className="py-4 text-sm font-semibold">Contact</li>
+                    <li className="py-4 text-sm sm:text-base md:text-lg font-semibold">Contact</li>
                   </Link>
                 </ul>
                 <div className="pt-[20%] flex-1">
-                  <p className="tracking-widest uppercase darkBlue border-b border-gray-400 my-4 font-semibold">
+                  <p className="tracking-widest uppercase darkBlue border-b border-gray-400 my-4 font-semibold text-sm sm:text-lg">
                     Connect With Me
                   </p>
                   <div className="flex items-center justify-between my-4 w-full  pt-[10%]">
