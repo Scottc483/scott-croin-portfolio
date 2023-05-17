@@ -32,8 +32,7 @@ export default function Home() {
             width={500}
             height={500}
             className="hidden"
-            loading="lazy"
-            fetchPriority="high"
+            loading="eager"
           />
           <canvas id="canvasExample" className="w-full max-w-2xl" />
           <div className="z-[100] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
