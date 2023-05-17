@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useEffect } from "react";
 import KUTE from "kute.js";
 import DrawBlob, { BlobType } from "blob-animated";
-import bridgeImage from "../../public/bridgeImage.jpg";
+import bridgeImage from "../images/bridge.jpg";
 
 export default function Home() {
   useEffect(() => {
