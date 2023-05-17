@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useEffect } from "react";
 import KUTE from "kute.js";
 import DrawBlob, { BlobType } from "blob-animated";
+import bridgeImage from "../../public/bridgeImage.jpg";
 
 export default function Home() {
   useEffect(() => {
@@ -24,7 +25,7 @@ export default function Home() {
         <div className="flex justify-center relative">
           <Image
             id="heroImage"
-            src="/ali-kazal-kotqL7Ud7fo-unsplash.jpg"
+            src={bridgeImage}
             alt="Picture of the author"
             width={500}
             height={500}
