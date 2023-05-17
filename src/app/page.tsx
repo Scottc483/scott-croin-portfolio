@@ -7,8 +7,8 @@ import DrawBlob, { BlobType } from "blob-animated";
 
 export default function Home() {
   useEffect(() => {
-    const canvas = document.getElementById("canvasExample");
-    const heroImage = document.getElementById("heroImage");
+    const canvas = document.getElementById("canvasExample") as HTMLCanvasElement;
+    const heroImage = document.getElementById("heroImage") as HTMLImageElement;
     const Blob = new DrawBlob({
       canvas: canvas,
       speed: 500,
