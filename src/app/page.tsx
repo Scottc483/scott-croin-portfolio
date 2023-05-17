@@ -8,16 +8,14 @@ import DrawBlob, { BlobType } from "blob-animated";
 export default function Home() {
 
   useEffect(() => {
-    const canvas = document.getElementById("canvasExample") as HTMLCanvasElement;
+    const blobelement = document.getElementById("canvasExample") as HTMLCanvasElement;
     const heroImage = document.getElementById("heroImage") as HTMLImageElement;
 
- 
       const Blob = new DrawBlob({
-        canvas: canvas,
-        speed: 500,
+        canvas: blobelement,
+        speed: 400,
         scramble: 0.1,
         maskedElement: heroImage,
-        // color: "#034001",
       });
     
   }, []);
@@ -27,14 +25,15 @@ export default function Home() {
     <>
       <section className=" flex flex-1 mx-auto pt-20 bg-offWhite justify-center overflow-hidden h-full ">
         <div className="flex justify-center relative">
-          <Image
+          <img
             id="heroImage"
-            src={'/bridgeImage.jpg'}
+            src='/bridgeImage.jpg'
             alt="Picture of the author"
             width={500}
             height={500}
             className="hidden"
-            onError={(e) => console.log("Error Loading Image", e)}
+            loading="lazy"
+            fetchPriority="high"
           />
           <canvas id="canvasExample" className="w-full max-w-2xl" />
           <div className="z-[100] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
