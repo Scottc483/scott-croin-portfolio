@@ -4,7 +4,6 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import KUTE from "kute.js";
 import DrawBlob, { BlobType } from "blob-animated";
-import bridgeImage from "../images/bridge.jpg";
 
 export default function Home() {
 
@@ -23,18 +22,19 @@ export default function Home() {
     
   }, []);
 
-  
+
   return (
     <>
       <section className=" flex flex-1 mx-auto pt-20 bg-offWhite justify-center overflow-hidden h-full ">
         <div className="flex justify-center relative">
           <Image
             id="heroImage"
-            src={'/./bridgeImage.jpg'}
+            src={'/bridgeImage.jpg'}
             alt="Picture of the author"
             width={500}
             height={500}
             className="hidden"
+            onError={(e) => console.log("Error Loading Image", e)}
           />
           <canvas id="canvasExample" className="w-full max-w-2xl" />
           <div className="z-[100] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
