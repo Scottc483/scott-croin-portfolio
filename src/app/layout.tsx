@@ -46,12 +46,16 @@ export default function RootLayout({
         <meta name="theme-color" content="#ffffff" />
       </Head>
       <body className="bg-darkGrey">
-        <main className="">
+        <main className={inter.className}>
           <Nav />
           {children}
           <Footer />
         </main>
+        <div id="globalLoader">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif" alt="" />
+      </div>
       </body>
+
     </html>
   );
 }

@@ -40,7 +40,7 @@ const Nav = () => {
 
 
   return (
-    <div className="fixed w-full h-20 shadow-xl z-[1000] bg-offWhite">
+    <div className="fixed w-full h-20  z-[1000] bg-offWhite">
       <div className="flex justify-between items-center w-full h-full px-10 2xl-:px-16">
         <div>
             <Link href="/">
