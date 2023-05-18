@@ -52,7 +52,7 @@ export default function Home() {
             <h2 className="text-base sm:text-lg md:text-2xl  offWhite font-semibold">
               I build things for the web.
             </h2>
-            <div className="flex items-center flex-col">
+            <div className="hidden md:flex items-center flex-col">
               <div className="flex items-center justify-between my-4 w-full">
                 <div className="rounded-full shadow-sm shadow-gray-400 p-3 bg-offWhite cursor-pointer hover:scale-110 ease-in duration-200 mr-1">
                   <a
