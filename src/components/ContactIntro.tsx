@@ -7,9 +7,9 @@ const ContactIntro = () => {
       Get In Touch
     </h2>
     <p className="text-lg mb-8">
-      Have a project in mind or want to collaborate? I'd love to hear from
+      Have a project in mind or want to collaborate? I&apos;d love to hear from
       you. Feel free to reach out using the contact form or through the
-      provided channels below. Let's connect and bring your ideas to life.
+      provided channels below. Let&apos;s connect and bring your ideas to life.
     </p>
     <div>
     <Link href="/contact"
