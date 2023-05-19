@@ -9,13 +9,13 @@ const Intro = () => {
     </div>
     <div className="bg-white rounded-lg shadow-md p-6 h-80 max-w-3xl">
     <p className="mb-4">
-      <span className='text-lg font-semibold'>I'm a web developer from BC, Canada</span>, with a recent graduation from BCIT's Software Systems Developer program and a background as a sous chef for five years.
+      <span className='text-lg font-semibold'>I&apos;m a web developer from BC, Canada</span>, with a recent graduation from BCIT&apos;s Software Systems Developer program and a background as a sous chef for five years.
     </p>
     <p className="mb-4">
       This unique combination of experiences equips me with a diverse skill set in web development. With keen attention to detail and a passion for creating seamless user experiences, my goal is to design captivating websites that leave a lasting impact.
     </p>
     <p className="mb-4">
-      If you're in need of a dedicated and innovative developer to bring your digital ideas to life, I'm excited to connect and collaborate.
+      If you&apos;re in need of a dedicated and innovative developer to bring your digital ideas to life, I&apos;m excited to connect and collaborate.
     </p>
     <p className="">
       Visit my full about page to learn more about my journey.
