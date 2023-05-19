@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
 import Image from "next/image";
-import { useEffect, useState, Suspense  } from "react";
+import { useEffect, useState, Suspense } from "react";
 import KUTE from "kute.js";
 import DrawBlob, { BlobType } from "blob-animated";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa";
@@ -12,30 +12,30 @@ import Link from "next/link";
 import Hero from "@/components/Hero";
 import Technologies from "@/components/Technologies";
 import Intro from "@/components/Intro";
+import ProjectIntro from "@/components/ProjectIntro";
 
 export default function Home() {
-
   useEffect(() => {
-    if (typeof window !== 'undefined') {
-      console.log('window loaded');
-      const loader = document.getElementById('globalLoader');
-      if (loader)
-        loader.remove();
+    if (typeof window !== "undefined") {
+      console.log("window loaded");
+      const loader = document.getElementById("globalLoader");
+      if (loader) loader.remove();
     }
   }, []);
 
   return (
     <>
       <section className="flex flex-1 mx-auto pt-20 bg-offWhite justify-center overflow-hidden h-full ">
-      <Suspense fallback={<p>Loading feed...</p>}>
         <Hero />
-      </Suspense>
       </section>
       <section className="flex flex-1 mx-auto pt-[10rem] bg-offWhite justify-center h-auto pb-[10rem] ">
-      <Intro />
+        <Intro />
       </section>
       <section className="flex flex-1 mx-auto pt-[10rem] bg-darkGrey justify-center shapedividers_com-3195 ">
         <Technologies />
+      </section>
+      <section className="flex flex-1 mx-auto pt-[10rem] bg-offWhite justify-center shapedividers_com-5732">
+        <ProjectIntro />
       </section>
     </>
   );

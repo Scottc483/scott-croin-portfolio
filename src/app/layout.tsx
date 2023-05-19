@@ -44,6 +44,7 @@ export default function RootLayout({
         <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
         <meta name="msapplication-TileColor" content="#da532c" />
         <meta name="theme-color" content="#ffffff" />
+        <script src="https://kit.fontawesome.com/8052e1056c.js" crossOrigin="anonymous"></script>
       </Head>
       <body className="bg-darkGrey">
         <main className={inter.className}>
@@ -52,7 +53,7 @@ export default function RootLayout({
           <Footer />
         </main>
         <div id="globalLoader">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif" alt="" />
+        <img src="/loadingSpinner.gif" alt="" />
       </div>
       </body>
 
