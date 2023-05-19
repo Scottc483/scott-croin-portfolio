@@ -16,15 +16,6 @@ import ProjectIntro from "@/components/ProjectIntro";
 
 export default function Home() {
 
-  
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      console.log("window loaded");
-      const loader = document.getElementById("globalLoader");
-      if (loader) loader.remove();
-    }
-  }, []);
-
   return (
     <>
       <section className="flex flex-1 mx-auto pt-20 bg-offWhite justify-center overflow-hidden h-full ">

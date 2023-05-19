@@ -15,6 +15,13 @@ import DrawBlob, { BlobType } from "blob-animated";
 const Hero =  () => {
 
     useEffect(() => {
+
+        if (typeof window !== "undefined") {
+          console.log("window loaded");
+          const loader = document.getElementById("globalLoader");
+          if (loader) loader.remove();
+        }
+
         const blobelement = document.getElementById(
           "canvasExample"
         ) as HTMLCanvasElement;
@@ -41,7 +48,7 @@ const Hero =  () => {
             window.removeEventListener("scroll", handleParallax);
           };
 
-
+     
       }, []);
 
   return (
