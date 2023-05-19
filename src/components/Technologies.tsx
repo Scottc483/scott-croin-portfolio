@@ -1,8 +1,9 @@
-"use client";
+'use client';
+
 import React, { useEffect } from "react";
 import { FaHtml5, FaCss3Alt, FaAngular } from "react-icons/fa";
 import Image from "next/image";
-import "./technologiesStyles.css";
+import "./TechnologiesStyles.css";
 
 import {
   SiJavascript,

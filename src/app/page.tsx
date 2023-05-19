@@ -15,6 +15,8 @@ import Intro from "@/components/Intro";
 import ProjectIntro from "@/components/ProjectIntro";
 
 export default function Home() {
+
+  
   useEffect(() => {
     if (typeof window !== "undefined") {
       console.log("window loaded");
