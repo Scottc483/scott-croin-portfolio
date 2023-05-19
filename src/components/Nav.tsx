@@ -177,7 +177,7 @@ const Nav = () => {
           </div>
         </div>
       </div>
-      <div className="fixed top-0 right-0 hidden md:flex flex-col justify-center h-full z-[1000]" ref={floatingMenu}>
+      <div className="fixed top-[40vh] right-0 hidden md:flex flex-col justify-center z-[1000]" ref={floatingMenu}>
         <div className="mr-5">
           <div className="flex flex-col items-center justify-center w-full mr-10  py-5">
             <div className="rounded-full bg-offWhite shadow-md shadow-gray-400 p-3 cursor-pointer hover:scale-110 ease-in duration-150">

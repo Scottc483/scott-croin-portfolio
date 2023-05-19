@@ -56,7 +56,6 @@ export default function RootLayout({
         <img src="/loadingSpinner.gif" alt="" />
       </div>
       </body>
-
     </html>
   );
 }

@@ -126,12 +126,24 @@ html {
   justify-content: center;
   align-items: center;
   display: flex;
+  overflow: hidden;
 }
 #globalLoader > img {
   width: 100px;
   height: 100px;
   animation: spin 1s linear infinite;
 }
+
+
+.custom-shape-divider-top-1684535873 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
 
 
 

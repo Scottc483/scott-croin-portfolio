@@ -24,6 +24,8 @@ import { BsFillBootstrapFill, BsGit } from "react-icons/bs";
 import { SiDotnet } from "react-icons/si";
 
 const Technologies = () => {
+
+  
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
       const cards = document.getElementById("cards");
