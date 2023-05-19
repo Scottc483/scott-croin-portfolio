@@ -10,6 +10,7 @@ export const metadata = {
   description: "Scott Croin | Web Developer",
   author : "Scott Croin",
 };
+import styles from './technologies.module.css'
 
 export default function RootLayout({
   children,

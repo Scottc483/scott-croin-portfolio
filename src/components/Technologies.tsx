@@ -3,7 +3,7 @@
 import React, { useEffect } from "react";
 import { FaHtml5, FaCss3Alt, FaAngular } from "react-icons/fa";
 import Image from "next/image";
-import "./TechnologiesStyles.css";
+import "./technologies.css";
 
 import {
   SiJavascript,

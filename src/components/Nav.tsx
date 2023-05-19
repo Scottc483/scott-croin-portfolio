@@ -11,7 +11,7 @@ import {
 import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 import { BsFillPersonLinesFill } from "react-icons/bs";
 
-import "./NavStyles.css";
+import "./nav.css";
 
 const Nav = () => {
   const parentRef = useRef<HTMLDivElement>(null);
