@@ -18,19 +18,19 @@ import ContactIntro from "@/components/ContactIntro";
 export default function Home() {
   return (
     <>
-      <section className="flex flex-1 mx-auto pt-20 bg-offWhite justify-center overflow-hidden h-full ">
+      <section className="flex flex-1 mx-auto pt-20 bg-offWhite justify-center overflow-hidden h-full z-[100]">
         <Hero />
       </section>
-      <section className="flex flex-1 mx-auto pt-[10rem] bg-offWhite justify-center h-auto pb-[10rem] ">
+      <section className="flex flex-1 mx-auto pt-[10rem] bg-offWhite justify-center h-auto pb-[10rem] z-[100]">
         <Intro />
       </section>
-      <section className="flex flex-1 mx-auto pt-[10rem] bg-darkGrey justify-center shapedividers_com-3195 ">
+      <section className="flex flex-1 mx-auto pt-[10rem] bg-darkGrey justify-center shapedividers_com-3195 z-[100]">
         <Technologies />
       </section>
-      <section className="flex flex-1 mx-auto pt-[10rem] bg-offWhite justify-center shapedividers_com-5732">
+      <section className="flex flex-1 mx-auto pt-[10rem] bg-offWhite justify-center shapedividers_com-5732 z-[100]">
         <ProjectIntro />
       </section>
-      <section className="flex flex-1 mx-auto pt-[10rem] bg-darkGrey justify-center relative">
+      <section className="flex flex-1 mx-auto pt-[10rem] bg-darkGrey justify-center relative z-[100]">
         <div className="custom-shape-divider-top-1684535873">
           <svg
             data-name="Layer 1"

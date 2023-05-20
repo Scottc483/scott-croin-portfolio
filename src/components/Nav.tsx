@@ -20,7 +20,6 @@ const Nav = () => {
   const floatingMenu = useRef<HTMLDivElement>(null);
   const [floatingMenuVisible, setFloatingMenuVisible] = useState(false);
 
-
   const handleNav = () => {
     setNavOpen(!navOpen);
   };
@@ -80,16 +79,25 @@ const Nav = () => {
                 </li>
               </Link>
             </ul>
-            <div onClick={handleNav} className="md:hidden">
+            <div onClick={handleNav} className={`${
+              navOpen ? 'pointer-events-none' : 'md:hidden'
+            }`}>
               <AiOutlineMenu size={25} />
             </div>
             <div
-              className={`${
-                navOpen
-                  ? "md:hidden fixed left-0 top-0 w-full h-screen bg-black/60 ease-out duration-500 z-[500]"
-                  : "md:hidden fixed left-0 top-0 w-full h-screen bg-black/0 ease-out duration-500 z-[-1000]"
-              }`}
+            // className={`${
+            //   navOpen
+            //     ? " block md:hidden fixed left-0 top-0 w-full h-screen bg-black/60 ease-out duration-300 z-[500]"
+            //     : " hidden md:hidden fixed left-0 top-0 w-full h-screen bg-black/0 ease-out duration-300 z-[-1000]"
+            // }`}
             >
+              <div
+                className={`${
+                  navOpen
+                    ? "  md:hidden fixed left-0 top-0 w-full h-screen bg-black/60 ease-out duration-300 z-[500] pointer-events-none"
+                    : "  md:hidden fixed left-0 top-0 w-full h-screen bg-black/0 ease-out duration-300 z-[-1000] pointer-events-none"
+                }`}
+              ></div>
               <div
                 className={`${
                   navOpen
@@ -177,21 +185,36 @@ const Nav = () => {
           </div>
         </div>
       </div>
-      <div className="fixed top-[40vh] right-0 hidden md:flex flex-col justify-center z-[1000]" ref={floatingMenu}>
-        <div className="mr-5">
+      <div
+        className="fixed top-[40vh] right-0 hidden md:flex flex-col justify-center z-[1000]"
+        ref={floatingMenu}
+      >
+        <div className="lg:mr-5">
           <div className="flex flex-col items-center justify-center w-full mr-10  py-5">
             <div className="rounded-full bg-offWhite shadow-md shadow-gray-400 p-3 cursor-pointer hover:scale-110 ease-in duration-150">
-              <a target="_blank" rel="noopener" href="https://www.linkedin.com/in/scott-croin/">
+              <a
+                target="_blank"
+                rel="noopener"
+                href="https://www.linkedin.com/in/scott-croin/"
+              >
                 <FaLinkedinIn />
               </a>
             </div>
             <div className="rounded-full bg-offWhite shadow-md mt-3 shadow-gray-400 p-3 cursor-pointer hover:scale-110 ease-in duration-150">
-              <a target="_blank" rel="noopener" href="https://github.com/Scottc483">
+              <a
+                target="_blank"
+                rel="noopener"
+                href="https://github.com/Scottc483"
+              >
                 <FaGithub />
               </a>
             </div>
             <div className="rounded-full bg-offWhite shadow-md mt-3 shadow-gray-400 p-3 cursor-pointer hover:scale-110 ease-in duration-150">
-              <a target="_blank" rel="noopener" href="mailto:scottcroin.dev@gmail.com">
+              <a
+                target="_blank"
+                rel="noopener"
+                href="mailto:scottcroin.dev@gmail.com"
+              >
                 <AiOutlineMail />
               </a>
             </div>

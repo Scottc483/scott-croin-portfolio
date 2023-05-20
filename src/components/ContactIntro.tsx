@@ -2,7 +2,7 @@ import React from 'react'
 import Link from 'next/link'
 const ContactIntro = () => {
   return (
-    <div className="flex flex-col py-16 max-w-5xl">
+    <div className="flex flex-col py-16 max-w-5xl p-16">
     <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
       Get In Touch
     </h2>
@@ -13,7 +13,7 @@ const ContactIntro = () => {
     </p>
     <div>
     <Link href="/contact"
-      className="px-8 py-4 bg-blue-500 text-white rounded-md font-semibold uppercase hover:bg-blue-600 transition duration-300">
+      className="px-6 py-3 bg-mediumGrey offWhite rounded-md font-semibold uppercase">
         Contact Me
     </Link>
     </div>

@@ -15,7 +15,7 @@ import {
   SiBootstrap,
   SiMysql,
 } from "react-icons/si";
-import {TfiHandPointRight} from "react-icons/tfi";
+import {TfiHandPointRight, TfiHandPointDown} from "react-icons/tfi";
 import { DiNodejsSmall, DiMongodb } from "react-icons/di";
 import { AiOutlineConsoleSql } from "react-icons/ai";
 import { GrGraphQl } from "react-icons/gr";
@@ -25,7 +25,7 @@ import { SiDotnet } from "react-icons/si";
 
 const Technologies = () => {
 
-  
+
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
       const cards = document.getElementById("cards");
@@ -60,19 +60,18 @@ const Technologies = () => {
     <>
       <div className="flex h-[900px] sm:h-[750px] md:h-[600px] mx-5 md:max-w-[1500px]">
 
-        <div className="flex flex-1 flex-row h-full w-full gap-2 justify-center items-center">
-        <div className="justify-center flex offWhite  pl-12 ">
-          <div className="">
-          
+        <div className="flex flex-1 flex-col md:flex-row h-full w-full gap-2 justify-center items-center">
+        <div className="justify-center flex offWhite pb-12 md:pb-0 md:pl-12 ">
+          <div className="">          
           <h3 className="uppercase text-s  mb-3">Check out my</h3>
-          
           <h1 className="text-5xl uppercase  font-semibold items-center">Skills </h1>
-          <TfiHandPointRight className="text-5xl mt-3"/>
+          <TfiHandPointRight className="text-5xl mt-3 hidden md:block"/>
+          <TfiHandPointDown className="text-5xl mt-3 md:hidden center"/>
           </div>
           
         </div>
           <div
-            className="flex flex-wrap justify-center items-center gap-2 md:p-10 ml-10  md:w-2/3"
+            className="flex flex-wrap justify-center items-center gap-2 md:p-10 md:ml-10  md:w-2/3"
             id="cards"
           >
             
