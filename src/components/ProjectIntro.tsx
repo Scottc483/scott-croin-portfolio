@@ -33,7 +33,7 @@ const ProjectIntro = () => {
           />
         </div>
           <div>
-          <Link href="/projects" className="px-8 py-4 bg-blue-500 text-white rounded-md font-semibold uppercase hover:bg-blue-600 transition duration-300 mt-8">
+          <Link href="/projects" className="px-8 py-4 offWhite bg-darkGrey rounded-md font-semibold uppercase hover:bg-mediumGrey transition duration-300 mt-8">
           View All Projects
         </Link>
           </div>

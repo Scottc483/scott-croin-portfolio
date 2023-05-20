@@ -13,7 +13,7 @@ const ContactIntro = () => {
     </p>
     <div>
     <Link href="/contact"
-      className="px-6 py-3 bg-mediumGrey offWhite rounded-md font-semibold uppercase">
+      className="px-6 py-3 bg-offWhite darkGrey rounded-md font-semibold uppercase">
         Contact Me
     </Link>
     </div>

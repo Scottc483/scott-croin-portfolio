@@ -15,7 +15,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, link, ima
     <div className="bg-white shadow-lg rounded-lg p-6 mb-8">
       <h3 className="text-xl font-semibold mb-2">{title}</h3>
       <p className="text-gray-600 mb-4">{description}</p>
-      <Link href={link} className="px-4 py-2 bg-blue-500 text-white rounded-md font-semibold uppercase hover:bg-blue-600 transition duration-300">
+      <Link href={link} className="px-4 py-2 bg-darkGrey offWhite rounded-md font-semibold uppercase hover:bg-mediumGrey transition duration-300">
           Learn More
       </Link>
     </div>

@@ -191,7 +191,7 @@ const Nav = () => {
       >
         <div className="lg:mr-5">
           <div className="flex flex-col items-center justify-center w-full mr-10  py-5">
-            <div className="rounded-full bg-offWhite shadow-md shadow-gray-400 p-3 cursor-pointer hover:scale-110 ease-in duration-150">
+            <div className="rounded-full bg-offWhite shadow-md shadow-gray-400 p-3 cursor-pointer hover:scale-110 hover:offWhite hover:bg-darkGrey ease-in duration-150">
               <a
                 target="_blank"
                 rel="noopener"
@@ -200,7 +200,7 @@ const Nav = () => {
                 <FaLinkedinIn />
               </a>
             </div>
-            <div className="rounded-full bg-offWhite shadow-md mt-3 shadow-gray-400 p-3 cursor-pointer hover:scale-110 ease-in duration-150">
+            <div className="rounded-full bg-offWhite shadow-md mt-3 shadow-gray-400 p-3 cursor-pointer hover:scale-110 hover:offWhite hover:bg-darkGrey ease-in duration-150">
               <a
                 target="_blank"
                 rel="noopener"
@@ -209,7 +209,7 @@ const Nav = () => {
                 <FaGithub />
               </a>
             </div>
-            <div className="rounded-full bg-offWhite shadow-md mt-3 shadow-gray-400 p-3 cursor-pointer hover:scale-110 ease-in duration-150">
+            <div className="rounded-full bg-offWhite shadow-md mt-3 shadow-gray-400 p-3 cursor-pointer hover:scale-110 hover:offWhite hover:bg-darkGrey ease-in duration-150">
               <a
                 target="_blank"
                 rel="noopener"
