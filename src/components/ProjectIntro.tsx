@@ -12,7 +12,7 @@ const ProjectIntro = () => {
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 uppercase pl-6">
           Projects
         </h2>
-        <div className="flex flex-col items-center">
+        <div className="flex flex-col">
           <ProjectCard
             title="Event Management Mobile App"
             description="An innovative mobile app built with React Native for efficient event management."

@@ -38,7 +38,7 @@ const Hero =  () => {
         const handleParallax = () => {
             const scrollY = window.scrollY;
             if (heroImage) {
-                blobelement.style.transform = `translateY(${scrollY * 0.2}px)`;
+                blobelement.style.transform = `translateY(${scrollY * 0.1}px)`;
             }
           };
       

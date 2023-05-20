@@ -58,7 +58,7 @@ const Technologies = () => {
 
   return (
     <>
-      <div className="flex h-[900px] sm:h-[750px] md:h-[600px] mx-5 md:max-w-[1500px]">
+      <div className="flex h-[900px]  mx-5 md:max-w-[1500px]">
 
         <div className="flex flex-1 flex-col md:flex-row h-full w-full gap-2 justify-center items-center">
         <div className="justify-center flex offWhite pb-12 md:pb-0 md:pl-12 ">
