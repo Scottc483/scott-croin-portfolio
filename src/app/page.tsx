@@ -14,6 +14,7 @@ import Technologies from "@/components/Technologies";
 import Intro from "@/components/Intro";
 import ProjectIntro from "@/components/ProjectIntro";
 import ContactIntro from "@/components/ContactIntro";
+import { Analytics } from '@vercel/analytics/react';
 
 export default function Home() {
   return (
@@ -46,6 +47,7 @@ export default function Home() {
         </div>
         <ContactIntro />
       </section>
+      <Analytics />
     </>
   );
 }
