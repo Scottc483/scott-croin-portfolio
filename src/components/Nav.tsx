@@ -62,11 +62,11 @@ const Nav = () => {
       <div className="fixed w-full h-20  z-[1000] bg-offWhite">
         <div className="flex justify-between items-center w-full h-full px-10 2xl-:px-16">
           <div>
-            <Link href="#home">
+          <button onClick={() => scrollTo("home")}>
               <h1 className="text-3xl font-bold pl-5 darkGrey  uppercase hover:lightBlue relative">
                 SC
               </h1>
-            </Link>
+            </button>
           </div>
           <div>
             <ul className="hidden md:flex ">
