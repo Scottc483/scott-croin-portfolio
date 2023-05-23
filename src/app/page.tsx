@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useState, Suspense } from "react";
+import { useEffect, useState, Suspense, useRef } from "react";
 import KUTE from "kute.js";
 import DrawBlob, { BlobType } from "blob-animated";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa";
@@ -16,34 +16,26 @@ import ProjectIntro from "@/components/ProjectIntro";
 import ContactIntro from "@/components/ContactIntro";
 import { Analytics } from '@vercel/analytics/react';
 
+
 export default function Home() {
+ 
   return (
     <>
-      <section className="flex flex-1 mx-auto pt-20 bg-offWhite justify-center overflow-hidden h-full z-[100]">
+      <section id="home" className="flex flex-1 mx-auto pt-20 bg-offWhite justify-center overflow-hidden h-full z-[100]">
         <Hero />
       </section>
-      <section className="flex flex-1 mx-auto pt-[10rem] bg-offWhite justify-center h-auto pb-[10rem] z-[100]">
+      <section id="about" className="flex flex-1 mx-auto pt-[10rem] bg-offWhite justify-center h-auto pb-[10rem] z-[100]">
         <Intro />
       </section>
-      <section className="flex flex-1 mx-auto pt-[10rem] bg-darkGrey justify-center shapedividers_com-3195 z-[100]">
+      <section id="skills" className="flex flex-1 mx-auto pt-[10rem] bg-darkGrey justify-center shapedividers_com-3195 z-[100]">
         <Technologies />
       </section>
-      <section className="flex flex-1 mx-auto pt-[10rem] bg-offWhite justify-center shapedividers_com-5732 z-[100]">
+      <section id="projects" className="flex flex-1 mx-auto pt-[10rem] bg-offWhite justify-center shapedividers_com-2059 z-[100]">
         <ProjectIntro />
       </section>
-      <section className="flex flex-1 mx-auto pt-[10rem] bg-darkGrey justify-center relative z-[100]">
-        <div className="custom-shape-divider-top-1684535873">
-          <svg
-            data-name="Layer 1"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 1200 120"
-            preserveAspectRatio="none"
-          >
-            <path
-              d="M1200 0L0 0 892.25 114.72 1200 0z"
-              className="shape-fill fill-[#F0F0F2]"
-            ></path>
-          </svg>
+      <section id="contact" className="flex flex-1 mx-auto pt-[10rem] bg-darkGrey justify-center relative z-[100] shapedividers_com-7110">
+        <div className="">
+
         </div>
         <ContactIntro />
       </section>

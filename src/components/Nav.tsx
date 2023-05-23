@@ -7,6 +7,7 @@ import {
   AiOutlineMenu,
   AiOutlineCloseCircle,
   AiOutlineMail,
+  AiOutlineArrowUp,
 } from "react-icons/ai";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 import { BsFillPersonLinesFill } from "react-icons/bs";
@@ -17,11 +18,24 @@ const Nav = () => {
   const parentRef = useRef<HTMLDivElement>(null);
   const [navOpen, setNavOpen] = useState(false);
 
-  const floatingMenu = useRef<HTMLDivElement>(null);
-  const [floatingMenuVisible, setFloatingMenuVisible] = useState(false);
+  const [scrollPosition, setScrollPosition] = useState(0);
+  const [showScrollButton, setShowScrollButton] = useState(false);
+
+  const handleScroll = () => {
+    const currentPosition = window.pageYOffset;
+    setScrollPosition(currentPosition);
+    console.log(currentPosition);
+    currentPosition >= 848 ? setShowScrollButton(true) : setShowScrollButton(false);
+  };
 
   const handleNav = () => {
     setNavOpen(!navOpen);
+  };
+
+  const scrollTo = (id: string) => {
+    const element = document.getElementById(id);
+    element?.scrollIntoView({ behavior: "smooth" });
+    setNavOpen(false);
   };
 
   const handleClickOutside = (event: MouseEvent) => {
@@ -36,8 +50,10 @@ const Nav = () => {
 
   useEffect(() => {
     document.addEventListener("mousedown", handleClickOutside);
+    window.addEventListener("scroll", handleScroll);
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
@@ -46,7 +62,7 @@ const Nav = () => {
       <div className="fixed w-full h-20  z-[1000] bg-offWhite">
         <div className="flex justify-between items-center w-full h-full px-10 2xl-:px-16">
           <div>
-            <Link href="/">
+            <Link href="#home">
               <h1 className="text-3xl font-bold pl-5 darkGrey  uppercase hover:lightBlue relative">
                 SC
               </h1>
@@ -54,34 +70,41 @@ const Nav = () => {
           </div>
           <div>
             <ul className="hidden md:flex ">
-              <Link href="/">
+              <button onClick={() => scrollTo("home")}>
                 <li className="ml-10 text-base uppercase hover:lightBlue relative">
                   Home
                   <span className="underline"></span>
                 </li>
-              </Link>
-              <Link href="/about">
+              </button>
+              <button onClick={() => scrollTo("about")}>
                 <li className="ml-10 text-base uppercase hover:lightBlue relative">
                   About
                   <span className="underline"></span>
                 </li>
-              </Link>
-              <Link href="/projects">
+              </button>
+              <button onClick={() => scrollTo("skills")}>
+                <li className="ml-10 text-base uppercase hover:lightBlue relative">
+                  Skills
+                  <span className="underline"></span>
+                </li>
+              </button>
+              <button onClick={() => scrollTo("projects")}>
                 <li className="ml-10 text-base uppercase hover:lightBlue relative">
                   Projects
                   <span className="underline"></span>
                 </li>
-              </Link>
-              <Link href="/contact">
+              </button>
+              <button onClick={() => scrollTo("contact")}>
                 <li className="ml-10 text-base uppercase hover:lightBlue relative">
                   Contact
                   <span className="underline"></span>
                 </li>
-              </Link>
+              </button>
             </ul>
-            <div onClick={handleNav} className={`${
-              navOpen ? 'pointer-events-none' : 'md:hidden'
-            }`}>
+            <div
+              onClick={handleNav}
+              className={`${navOpen ? "pointer-events-none" : "md:hidden"}`}
+            >
               <AiOutlineMenu size={25} />
             </div>
             <div
@@ -113,28 +136,33 @@ const Nav = () => {
                     </h1>
                   </div>
                 </div>
-                <div className="py-4 flex flex-col">
-                  <ul className="uppercase">
-                    <Link href="/" onClick={handleNav}>
+                <div className="py-4 ">
+                  <ul className="uppercase flex flex-col items-start">
+                    <button onClick={() => scrollTo("home")}>
                       <li className="py-4 text-sm sm:text-base md:text-lg font-semibold">
                         Home
                       </li>
-                    </Link>
-                    <Link href="/about" onClick={handleNav}>
+                    </button>
+                    <button onClick={() => scrollTo("about")}>
                       <li className="py-4 text-sm sm:text-base md:text-lg font-semibold">
                         About
                       </li>
-                    </Link>
-                    <Link href="/projects" onClick={handleNav}>
+                    </button>
+                    <button onClick={() => scrollTo("skills")}>
+                      <li className="py-4 text-sm sm:text-base md:text-lg font-semibold">
+                        Skills
+                      </li>
+                    </button>
+                    <button onClick={() => scrollTo("projects")}>
                       <li className="py-4 text-sm sm:text-base md:text-lg font-semibold">
                         Projects
                       </li>
-                    </Link>
-                    <Link href="/contact" onClick={handleNav}>
+                    </button>
+                    <button onClick={() => scrollTo("contact")}>
                       <li className="py-4 text-sm sm:text-base md:text-lg font-semibold">
                         Contact
                       </li>
-                    </Link>
+                    </button>
                   </ul>
                   <div className="pt-[20%] flex-1">
                     <p className="tracking-widest uppercase darkBlue border-b border-gray-400 my-4 font-semibold text-sm sm:text-lg">
@@ -185,10 +213,7 @@ const Nav = () => {
           </div>
         </div>
       </div>
-      <div
-        className="fixed top-[40vh] right-0 hidden md:flex flex-col justify-center z-[1000]"
-        ref={floatingMenu}
-      >
+      <div className="fixed top-[70vh] right-0 hidden md:flex flex-col justify-center z-[1000]">
         <div className="lg:mr-5">
           <div className="flex flex-col items-center justify-center w-full mr-10  py-5">
             <div className="rounded-full bg-offWhite shadow-md shadow-gray-400 p-3 cursor-pointer hover:scale-110 hover:offWhite hover:bg-darkGrey ease-in duration-150">
@@ -217,6 +242,18 @@ const Nav = () => {
               >
                 <AiOutlineMail />
               </a>
+            </div>
+            <div className="mt-5">
+              {showScrollButton && (
+                <button
+                  className="rounded-full bg-offWhite shadow-md mt-3 shadow-gray-400 p-3 cursor-pointer hover:scale-110 hover:offWhite hover:bg-darkGrey ease-in duration-300"
+                  onClick={() =>
+                    window.scrollTo({ top: 0, behavior: "smooth"})
+                  }
+                >
+                  <AiOutlineArrowUp />
+                </button>
+              )}
             </div>
           </div>
         </div>

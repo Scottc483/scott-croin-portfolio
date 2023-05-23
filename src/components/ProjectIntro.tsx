@@ -32,11 +32,6 @@ const ProjectIntro = () => {
             image=""
           />
         </div>
-          <div>
-          <Link href="/projects" className="px-8 py-4 offWhite bg-darkGrey rounded-md font-semibold uppercase hover:bg-mediumGrey transition duration-300 mt-8">
-          View All Projects
-        </Link>
-          </div>
       </div>
     </>
   );
