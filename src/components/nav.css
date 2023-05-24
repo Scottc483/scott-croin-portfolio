@@ -7,6 +7,7 @@ ul li.relative {
     bottom: 0;
     left: 0;
     height: 2px;
+    width: 0;
     background-color: #383840;
     transition: width 0.3s ease;
   }

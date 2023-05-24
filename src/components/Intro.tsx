@@ -1,15 +1,24 @@
 import React from "react";
-import Link from "next/link";
+
+import Image from "next/image";
 
 const Intro = () => {
   return (
     <>
-      <div className="flex flex-1 justify-center flex-col items-center">
-     
-        <div className="bg-white rounded-lg shadow-md p-6 md:mx-20 m-5 max-w-3xl">
-        <div className="">
-          <h2 className="text-3xl font-bold mb-4">Welcome!</h2>
+      <div className="bg-white rounded-lg shadow-md p-6 md:mx-20 m-5 max-w-3xl flex flex-1 justify-between flex-col md:flex-row items-start">
+        <div className="w-full h-full flex items-center justify-center md:mr-5">
+        <Image
+            src="/profilePicture.jpg"
+            alt="profile picture"
+            width={200}
+            height={200}
+            className="rounded-full"
+          />
         </div>
+        <div>
+        <h1 className="text-2xl sm:text-4xl  font-bold mediumGrey my-2">
+            About Me
+          </h1>
           <p className="mb-4">
             <span className="text-lg font-semibold">
               I&apos;m a web developer from BC, Canada
@@ -28,17 +37,6 @@ const Intro = () => {
             bring your digital ideas to life, I&apos;m excited to connect and
             collaborate.
           </p>
-          <p className="">
-            Visit my full about page to learn more about my journey.
-          </p>
-          <div className="mt-8">
-            <Link
-              href="/about"
-              className="px-8 py-3 offWhite bg-darkGrey text-xs rounded-md font-semibold uppercase transition duration-300"
-            >
-              About Me
-            </Link>
-          </div>
         </div>
       </div>
     </>

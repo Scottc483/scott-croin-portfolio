@@ -27,7 +27,6 @@ const Nav = () => {
 
   const scrollTo = (id: string) => {
     const element = document.getElementById(id);
-    const navBar = document.getElementById("navBar");
     element?.scrollIntoView({ behavior: "smooth" });
     setNavOpen(false);
   };
@@ -59,16 +58,7 @@ const Nav = () => {
   useEffect(() => {
     const handleScroll = () => {
       const currentPosition = window.pageYOffset;
-      const navBar = document.getElementById("navBar");
-      
-      const home = document.getElementById("home");
-      const about = document.getElementById("about");
-      const skills = document.getElementById("skills");
-      const projects = document.getElementById("projects");
-      const contact = document.getElementById("contact");
-
       currentPosition >= 848 ? setShowScrollButton(true) : setShowScrollButton(false);
-
       setScrollPosition(currentPosition);
 
     };
@@ -82,7 +72,7 @@ const Nav = () => {
 
   return (
     <>
-      <div id="navBar" className="fixed top-0 w-full h-20  z-[1000] bg-offWhite transition-all ">
+      <div id="navBar" className="fixed top-0 w-full h-20  z-[1000] shadow-md bg-gray-200 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 border border-gray-100 transition-all ">
         <div className="flex justify-between items-center w-full h-full px-10 2xl-:px-16">
           <div>
           <button onClick={() => scrollTo("home")}>
@@ -94,31 +84,31 @@ const Nav = () => {
           <div>
             <ul className="hidden md:flex ">
               <button onClick={() => scrollTo("home")}>
-                <li className="ml-10 text-base uppercase hover:lightBlue relative">
+                <li className="ml-10 text-base uppercase hover:lightBlue relative font-semibold">
                   Home
                   <span className="underline"></span>
                 </li>
               </button>
               <button onClick={() => scrollTo("about")}>
-                <li className="ml-10 text-base uppercase hover:lightBlue relative">
+                <li className="ml-10 text-base uppercase hover:lightBlue relative font-semibold">
                   About
                   <span className="underline"></span>
                 </li>
               </button>
               <button onClick={() => scrollTo("skills")}>
-                <li className="ml-10 text-base uppercase hover:lightBlue relative">
+                <li className="ml-10 text-base uppercase hover:lightBlue relative font-semibold">
                   Skills
                   <span className="underline"></span>
                 </li>
               </button>
               <button onClick={() => scrollTo("projects")}>
-                <li className="ml-10 text-base uppercase hover:lightBlue relative">
+                <li className="ml-10 text-base uppercase hover:lightBlue relative font-semibold">
                   Projects
                   <span className="underline"></span>
                 </li>
               </button>
               <button onClick={() => scrollTo("contact")}>
-                <li className="ml-10 text-base uppercase hover:lightBlue relative">
+                <li className="ml-10 text-base uppercase hover:lightBlue relative font-semibold">
                   Contact
                   <span className="underline"></span>
                 </li>
