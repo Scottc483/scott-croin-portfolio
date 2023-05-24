@@ -20,6 +20,7 @@ const Nav = () => {
 
   const [scrollPosition, setScrollPosition] = useState(0);
   const [showScrollButton, setShowScrollButton] = useState(false);
+  const [navDetach, setNavDetach] = useState(false);
 
   const handleNav = () => {
     setNavOpen(!navOpen);
@@ -49,18 +50,20 @@ const Nav = () => {
       rect.left >= 0 &&
       rect.bottom <=
         (window.innerHeight || html.clientHeight) + element.offsetHeight &&
-      rect.right <= (window.innerWidth || html.clientWidth) + element.offsetWidth
+      rect.right <=
+        (window.innerWidth || html.clientWidth) + element.offsetWidth
     );
   };
-
-
 
   useEffect(() => {
     const handleScroll = () => {
       const currentPosition = window.pageYOffset;
-      currentPosition >= 848 ? setShowScrollButton(true) : setShowScrollButton(false);
-      setScrollPosition(currentPosition);
 
+      currentPosition > 0 ? setNavDetach(true) : setNavDetach(false);
+      currentPosition >= 848
+        ? setShowScrollButton(true)
+        : setShowScrollButton(false);
+      setScrollPosition(currentPosition);
     };
     document.addEventListener("mousedown", handleClickOutside);
     window.addEventListener("scroll", handleScroll);
@@ -72,10 +75,17 @@ const Nav = () => {
 
   return (
     <>
-      <div id="navBar" className="fixed top-0 w-full h-20  z-[1000] shadow-md bg-gray-200 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 border border-gray-100 transition-all ">
+      <div
+        id="navBar"
+        className={`fixed top-0 w-full h-20  z-[1000] transition-all ${
+          navDetach
+            ? "shadow-md bg-gray-200 rounded-b-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 border-b border-gray-100"
+            : "bg-offWhite"
+        } '`}
+      >
         <div className="flex justify-between items-center w-full h-full px-10 2xl-:px-16">
           <div>
-          <button onClick={() => scrollTo("home")}>
+            <button onClick={() => scrollTo("home")}>
               <h1 className="text-3xl font-bold pl-5 darkGrey  uppercase hover:lightBlue relative">
                 SC
               </h1>
@@ -120,8 +130,7 @@ const Nav = () => {
             >
               <AiOutlineMenu size={25} />
             </div>
-            <div
-            >
+            <div>
               <div
                 className={`${
                   navOpen
@@ -206,13 +215,13 @@ const Nav = () => {
                       </div>
                     </div>
                     <div>
-                    <a
-                          target="_blank"
-                          rel="noopener"
-                          href="./pdf/Scott-Croin-Resume.pdf"
-                        >
-                          <BsFillPersonLinesFill />
-                        </a>
+                      <a
+                        target="_blank"
+                        rel="noopener"
+                        href="./pdf/Scott-Croin-Resume.pdf"
+                      >
+                        <BsFillPersonLinesFill />
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -256,7 +265,7 @@ const Nav = () => {
                 <button
                   className="rounded-full bg-offWhite shadow-md mt-3 shadow-gray-400 p-3 cursor-pointer hover:scale-110 hover:offWhite hover:bg-darkGrey ease-in duration-300"
                   onClick={() =>
-                    window.scrollTo({ top: 0, behavior: "smooth"})
+                    window.scrollTo({ top: 0, behavior: "smooth" })
                   }
                 >
                   <AiOutlineArrowUp />
