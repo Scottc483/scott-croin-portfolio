@@ -60,7 +60,13 @@ const Nav = () => {
     const handleScroll = () => {
       const currentPosition = window.pageYOffset;
       const navBar = document.getElementById("navBar");
-    
+      
+      const home = document.getElementById("home");
+      const about = document.getElementById("about");
+      const skills = document.getElementById("skills");
+      const projects = document.getElementById("projects");
+      const contact = document.getElementById("contact");
+
       currentPosition >= 848 ? setShowScrollButton(true) : setShowScrollButton(false);
 
       setScrollPosition(currentPosition);
