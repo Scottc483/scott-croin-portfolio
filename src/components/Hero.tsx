@@ -1,15 +1,6 @@
 "use client";
 
 import React, { useEffect } from "react";
-import Image from "next/image";
-import Link from "next/link";
-import {
-  AiOutlineMenu,
-  AiOutlineCloseCircle,
-  AiOutlineMail,
-} from "react-icons/ai";
-import { FaGithub, FaLinkedinIn } from "react-icons/fa";
-import { BsFillPersonLinesFill } from "react-icons/bs";
 import DrawBlob, { BlobType } from "blob-animated";
 
 const Hero = () => {
@@ -70,12 +61,12 @@ const Hero = () => {
         <h2 className="text-base sm:text-lg md:text-2xl  offWhite font-semibold">
           I build things for the web.
         </h2>
-        <div className="hidden md:flex w-full flex justify-start pt-10">
+        <div className="hidden md:flex w-full justify-start pt-10">
           <a
             target="_blank"
             rel="noopener"
             href="./pdf/Scott-Croin-Resume.pdf"
-            className="uppercase px-3 py-2 justify-center flex flex-row items-center w-1/2 rounded-full hover:shadow-[0_0px_8px_0px_#ffffff] bg-offWhite font-semibold cursor-pointer ease-in duration-300 flex flex-row justify-space items-center"
+            className="uppercase px-3 py-2 justify-center flex flex-row items-center w-1/2 rounded-full hover:shadow-[0_0px_8px_0px_#ffffff] bg-offWhite font-semibold cursor-pointer ease-in duration-300  justify-space "
           >
             Resume
           </a>

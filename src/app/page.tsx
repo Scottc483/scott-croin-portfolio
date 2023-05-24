@@ -16,6 +16,10 @@ import ProjectIntro from "@/components/ProjectIntro";
 import ContactIntro from "@/components/ContactIntro";
 import { Analytics } from '@vercel/analytics/react';
 
+useEffect(() => {
+  
+}, []);
+
 
 export default function Home() {
  

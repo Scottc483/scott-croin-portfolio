@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <footer>
       <div className="w-full h-20 bg-darkGrey flex justify-center items-center">
-        <p className="offWhite text-sm">© 2021 Scott Croin</p>
+        <p className="offWhite text-sm">© 2023 Scott Croin</p>
       </div>
     </footer>
   );

@@ -27,6 +27,7 @@ const Nav = () => {
 
   const scrollTo = (id: string) => {
     const element = document.getElementById(id);
+    const navBar = document.getElementById("navBar");
     element?.scrollIntoView({ behavior: "smooth" });
     setNavOpen(false);
   };
@@ -41,20 +42,29 @@ const Nav = () => {
     }
   };
 
+  const isInViewport = (element: HTMLElement) => {
+    const rect = element.getBoundingClientRect();
+    const html = document.documentElement;
+    return (
+      rect.top >= 0 &&
+      rect.left >= 0 &&
+      rect.bottom <=
+        (window.innerHeight || html.clientHeight) + element.offsetHeight &&
+      rect.right <= (window.innerWidth || html.clientWidth) + element.offsetWidth
+    );
+  };
+
+
+
   useEffect(() => {
     const handleScroll = () => {
       const currentPosition = window.pageYOffset;
       const navBar = document.getElementById("navBar");
     
       currentPosition >= 848 ? setShowScrollButton(true) : setShowScrollButton(false);
-      console.log(currentPosition, scrollPosition);
-      if (currentPosition > scrollPosition ) {
-        navBar!.style.top = "-100px";
-      } else {
-        navBar!.style.top = "0";
-      }
+
       setScrollPosition(currentPosition);
-      console.log(scrollPosition);
+
     };
     document.addEventListener("mousedown", handleClickOutside);
     window.addEventListener("scroll", handleScroll);
