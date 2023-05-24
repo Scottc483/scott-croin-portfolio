@@ -5,10 +5,11 @@ const Intro = () => {
   return (
     <>
       <div className="flex flex-1 justify-center flex-col items-center">
-        <div className="flex justify-start items-start w-full max-w-3xl pl-6 md:pl-4">
+     
+        <div className="bg-white rounded-lg shadow-md p-6 md:mx-20 m-5 max-w-3xl">
+        <div className="">
           <h2 className="text-3xl font-bold mb-4">Welcome!</h2>
         </div>
-        <div className="bg-white rounded-lg shadow-md p-6 md:mx-20 m-5 max-w-3xl">
           <p className="mb-4">
             <span className="text-lg font-semibold">
               I&apos;m a web developer from BC, Canada

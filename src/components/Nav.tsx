@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, use } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -20,13 +20,6 @@ const Nav = () => {
 
   const [scrollPosition, setScrollPosition] = useState(0);
   const [showScrollButton, setShowScrollButton] = useState(false);
-
-  const handleScroll = () => {
-    const currentPosition = window.pageYOffset;
-    setScrollPosition(currentPosition);
-    console.log(currentPosition);
-    currentPosition >= 848 ? setShowScrollButton(true) : setShowScrollButton(false);
-  };
 
   const handleNav = () => {
     setNavOpen(!navOpen);
@@ -49,17 +42,31 @@ const Nav = () => {
   };
 
   useEffect(() => {
+    const handleScroll = () => {
+      const currentPosition = window.pageYOffset;
+      const navBar = document.getElementById("navBar");
+    
+      currentPosition >= 848 ? setShowScrollButton(true) : setShowScrollButton(false);
+      console.log(currentPosition, scrollPosition);
+      if (currentPosition > scrollPosition ) {
+        navBar!.style.top = "-100px";
+      } else {
+        navBar!.style.top = "0";
+      }
+      setScrollPosition(currentPosition);
+      console.log(scrollPosition);
+    };
     document.addEventListener("mousedown", handleClickOutside);
     window.addEventListener("scroll", handleScroll);
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [scrollPosition]);
 
   return (
     <>
-      <div className="fixed w-full h-20  z-[1000] bg-offWhite">
+      <div id="navBar" className="fixed top-0 w-full h-20  z-[1000] bg-offWhite transition-all ">
         <div className="flex justify-between items-center w-full h-full px-10 2xl-:px-16">
           <div>
           <button onClick={() => scrollTo("home")}>
@@ -108,11 +115,6 @@ const Nav = () => {
               <AiOutlineMenu size={25} />
             </div>
             <div
-            // className={`${
-            //   navOpen
-            //     ? " block md:hidden fixed left-0 top-0 w-full h-screen bg-black/60 ease-out duration-300 z-[500]"
-            //     : " hidden md:hidden fixed left-0 top-0 w-full h-screen bg-black/0 ease-out duration-300 z-[-1000]"
-            // }`}
             >
               <div
                 className={`${
@@ -196,15 +198,15 @@ const Nav = () => {
                       >
                         <AiOutlineMail />
                       </div>
-                      <div className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-110 ease-in duration-300">
-                        <a
+                    </div>
+                    <div>
+                    <a
                           target="_blank"
                           rel="noopener"
                           href="./pdf/Scott-Croin-Resume.pdf"
                         >
                           <BsFillPersonLinesFill />
                         </a>
-                      </div>
                     </div>
                   </div>
                 </div>
