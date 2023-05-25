@@ -79,7 +79,7 @@ const Nav = () => {
         id="navBar"
         className={`fixed top-0 w-full h-20  z-[1000] transition-all ${
           navDetach
-            ? "shadow-md bg-gray-200 rounded-b-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 border-b border-gray-100"
+            ? "shadow-md bg-green-200 rounded-b-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 border-b border-gray-100"
             : "bg-offWhite"
         } '`}
       >
