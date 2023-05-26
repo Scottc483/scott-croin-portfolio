@@ -7,6 +7,7 @@ import Image from "next/image";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { FaGithub, FaInfoCircle } from "react-icons/fa";
+import RightNav from "react-multi-carousel"
 
 interface ProjectCardProps {
   title: string;
@@ -18,6 +19,8 @@ interface ProjectCardProps {
   technologies: string[];
   mobile: boolean;
 }
+
+
 
 const ProjectCard: React.FC<ProjectCardProps> = ({
   title,
@@ -33,15 +36,19 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
 
   const mobileResponsive = {
     desktop: {
-      breakpoint: { max: 3000, min: 768 },
+      breakpoint: { max: 4000, min: 768 },
       items: 3,
       slidesToSlide: 2 // optional, default to 1.
     },
     tablet: {
-      breakpoint: { max: 768, min: 464 },
+      breakpoint: { max: 1024, min: 768 },
       items: 2,
       slidesToSlide: 1 // optional, default to 1.
-
+    },
+    largeMobile: {
+      breakpoint: { max: 768, min: 464 },
+      items: 2,
+      slidesToSlide: 1
     },
     mobile: {
       breakpoint: { max: 464, min: 0 },
@@ -52,7 +59,6 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   
   const desktopResponsive = {
     superLargeDesktop: {
-      // the naming can be any, depends on you.
       breakpoint: { max: 4000, min: 3000 },
       items: 1
     },
@@ -64,41 +70,71 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
       breakpoint: { max: 1024, min: 464 },
       items: 1
     },
+    largeMobile: {
+      breakpoint: { max: 768, min: 464 },
+      items: 1,
+    },
     mobile: {
       breakpoint: { max: 464, min: 0 },
       items: 1
     }
-
   };
 
+  const ButtonGroup = ({ next, previous, goToSlide, ...rest }: any) => {
+    const { carouselState: { currentSlide, totalItems} } = rest;
+    console.log("current Slide",currentSlide);
+    console.log("Number of slides",image.length);
+    console.log("Number of Items", rest.carouselState.totalItems);
+    const handleDotClick = (slideIndex: number) => {
+      goToSlide(slideIndex);
+    };
 
+    return (
+      <div className="carousel-button-group flex justify-between">
+        <button className=" w-32 h-32 bg-black" onClick={() => previous()}></button>
+        <div className="carousel-dots">
+        {Array.from(image, (_, index) => (
+          <button
+            key={index}
+            className={`dot ${currentSlide === index ? "bg-black" : "bg-mediumGrey"} w-2 h-2 rounded-full  `}
+            onClick={() => handleDotClick(index)}
+          >TEST</button>
+        ))}
+      </div>
+        <button className=" w-32 h-32 bg-black" onClick={() => next()}></button>
+      </div>
+    );
+  };
+  
   const imageClassName = mobile ? "w-[175px] md:w-[250px] lg:w-[500px] h-auto" : "w-auto h-auto";
 
   return (
     <div className=" shadow-lg rounded-lg md:p-6 mb-8 bg-gray-200">
-      <div>
+      <div className="">
         {Array.isArray(image) ? (
           <Carousel
-            responsive={mobile? mobileResponsive : desktopResponsive}
+            responsive={mobile ? mobileResponsive : desktopResponsive}
             containerClass="py-8"
             dotListClass="custom-dot-list-style"
             itemClass="flex items-center justify-center"
             infinite={true}
             swipeable={true}
-            ssr={true}
-            removeArrowOnDeviceType={["tablet", "mobile"]}
+            removeArrowOnDeviceType={["largeMobile", "mobile"]}
+            arrows={true}
             showDots={true}
-            partialVisible={true}
+            partialVisible={false}
+            // customButtonGroup={<ButtonGroup />}
+            renderButtonGroupOutside={true}
+            renderArrowsWhenDisabled={false}
           >
             {image.map((image, index) => (
-              <div key={index} className="bg-green-100 bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 border border-green-100 rounded-lg flex items-center justify-center shadow-lg md:px-2 md:py-4 mx-5 h-full w-auto">
+              <div key={index} className="rounded-lg flex items-center justify-center shadow-[0_0px_8px_0px_#656573] md:px-2 md:py-4 mx-5 h-full w-auto">
                 <Image
                   src={image}
                   alt={title}
                   width={500}
                   height={300}
-                  className={imageClassName + "object-fill " }
-             
+                  className={imageClassName + "object-fill rounded-xl"}
                 />
               </div>
             ))}
@@ -116,7 +152,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         )}
       </div>
       <div className="flex flex-col justify-center w-full items-center mt-6 px-5 md:px-10 ">
-        <div className="max-w-xl">
+        <div className="max-w-2xl w-full">
         <div className="">
           <h3 className="text-xl sm:text-2xl font-semibold mb-2 uppercase">{title}</h3>
         </div>
@@ -161,7 +197,6 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
               More Info
             </Link>
           )}
-          
         </div>
       </div>
       </div>

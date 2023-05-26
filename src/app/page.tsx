@@ -1,14 +1,3 @@
-"use client";
-
-import Image from "next/image";
-import { useEffect, useState, Suspense, useRef } from "react";
-import KUTE from "kute.js";
-import DrawBlob, { BlobType } from "blob-animated";
-import { FaGithub, FaLinkedinIn } from "react-icons/fa";
-import { AiOutlineMail } from "react-icons/ai";
-import { BsFillPersonLinesFill } from "react-icons/bs";
-import { AiOutlineMenu, AiOutlineCloseCircle } from "react-icons/ai";
-import Link from "next/link";
 import Hero from "@/components/Hero";
 import Technologies from "@/components/Technologies";
 import Intro from "@/components/Intro";
