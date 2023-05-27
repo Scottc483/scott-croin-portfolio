@@ -14,7 +14,7 @@ export async function POST(req: Request){
         sgMail.setApiKey(apiKey);
         const msg = {
             to: 'scottcroin.dev@gmail.com',
-            from: 'scottcroin.dev@gmail.com',
+            from: 'scott.c19@gmail.com',
             subject: 'Contact Form Submission',
             html: `<p>Name: ${fullname}</p><p>Email: ${email}</p><p>Message: ${message}</p>`,
         };
