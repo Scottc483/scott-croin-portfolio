@@ -128,7 +128,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
             renderArrowsWhenDisabled={false}
           >
             {image.map((image, index) => (
-              <div key={index} className="rounded-lg flex items-center justify-center shadow-[0_0px_8px_0px_#656573] md:px-2 md:py-4 mx-5 h-full w-auto">
+              <div key={index} className="rounded-lg flex items-center justify-center shadow-[0_0px_8px_0px_#656573] md:px-2 md:py-4 mx-5 h-full w-full max-w-xl">
                 <Image
                   src={image}
                   alt={title}
