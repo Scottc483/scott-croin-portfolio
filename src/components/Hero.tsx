@@ -23,18 +23,18 @@ const Hero = () => {
       maskedElement: heroImage,
     });
 
-    const handleParallax = () => {
-      const scrollY = window.scrollY;
-      if (heroImage) {
-        blobelement.style.transform = `translateY(${scrollY * 0.1}px)`;
-      }
-    };
+    // const handleParallax = () => {
+    //   const scrollY = window.scrollY;
+    //   if (heroImage) {
+    //     blobelement.style.transform = `translateY(${scrollY * 0.1}px)`;
+    //   }
+    // };
 
-    window.addEventListener("scroll", handleParallax);
+    // window.addEventListener("scroll", handleParallax);
 
-    return () => {
-      window.removeEventListener("scroll", handleParallax);
-    };
+    // return () => {
+    //   window.removeEventListener("scroll", handleParallax);
+    // };
   }, []);
 
   return (
