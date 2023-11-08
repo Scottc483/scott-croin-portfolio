@@ -214,7 +214,7 @@ const Nav = () => {
                         <AiOutlineMail />
                       </div>
                     </div>
-                    <div>
+                    {/* <div>
                       <a
                         target="_blank"
                         rel="noopener"
@@ -222,7 +222,7 @@ const Nav = () => {
                       >
                         <BsFillPersonLinesFill />
                       </a>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
               </div>

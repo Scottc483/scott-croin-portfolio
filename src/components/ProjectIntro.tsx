@@ -7,7 +7,7 @@ const ProjectIntro = () => {
     <>
       <div className="flex flex-col p-5 md:p-16 max-w-6xl w-full">
         <h2 className="text-base sm:text-lg  md:text-xl font-semi-bold mb-4 pl-6">
-          Take a Look at my
+          Take a look at my
         </h2>
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 uppercase pl-6">
           Projects
