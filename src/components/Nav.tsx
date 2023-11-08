@@ -214,15 +214,18 @@ const Nav = () => {
                         <AiOutlineMail />
                       </div>
                     </div>
-                    {/* <div>
-                      <a
-                        target="_blank"
-                        rel="noopener"
-                        href="./pdf/Scott-Croin-Resume.pdf"
-                      >
-                        <BsFillPersonLinesFill />
-                      </a>
-                    </div> */}
+                      <div className="py-3 text-sm sm:text-base md:text-lg font-semibold rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-110 ease-in duration-300 mr-1">
+                    
+                        <a
+                        className="flex flex-row items-center justify-around"
+                          target="_blank"
+                          rel="noopener"
+                          href="./pdf/Scott-Croin-Resume.pdf"
+                        >
+                            <h2>RESUME</h2>
+                          <BsFillPersonLinesFill />
+                        </a>
+                      </div>
                   </div>
                 </div>
               </div>

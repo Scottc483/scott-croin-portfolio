@@ -146,7 +146,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
                   alt={title}
                   width={500}
                   height={300}
-                  className={imageClassName + " object-fill rounded-xl"}
+                  className={imageClassName + " object-fill rounded-xl p-3"}
                   blurDataURL="data:..."
                   placeholder="blur"
                 />

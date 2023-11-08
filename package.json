@@ -17,7 +17,6 @@
     "@vercel/analytics": "^1.0.1",
     "autoprefixer": "10.4.14",
     "blob-animated": "^1.2.9",
-    "caniuse-lite": "^1.0.30001561",
     "eslint": "8.40.0",
     "eslint-config-next": "13.4.2",
     "kute.js": "^2.2.4",
