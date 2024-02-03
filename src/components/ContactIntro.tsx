@@ -60,15 +60,15 @@ const ContactIntro = () => {
       <div>
         <form
           onSubmit={handleSubmit}
-          className="rounded-lg shadow-xl flex flex-col px-8 py-8 bg-offWhite dark:bg-blue-500"
+          className="rounded-lg shadow-xl flex flex-col px-8 py-8 bg-offWhite dark:bg-offWhite text-darkGrey"
         >
-          <h1 className="text-2xl font-bold dark:text-gray-50">
+          <h1 className="text-2xl font-bold dark:text-darkGrey">
             Send a message
           </h1>
-          <p className="text-gray-500 font-light mt-2 dark:text-gray-50">
+          <p className="text-gray-500 font-light mt-2 dark:text-darkGrey">
             I&apos;ll get back to you as soon as possible.
           </p>
-          <h3 className="text-red-500 font-light mt-2 dark:text-gray-50">
+          <h3 className="text-red-500 font-light mt-2 dark:text-darkGrey">
             {formErrors}
           </h3>
           {isSubmitted && isModalOpen && (
@@ -78,7 +78,7 @@ const ContactIntro = () => {
             <div className="absolute w-[100vw] h-[100vh] bg-gray-500 bg-opacity-60 z-49">
             </div>
               <div className="bg-offWhite p-8 rounded-lg shadow-[0_0px_8px_0px_#383840] z-50">
-                <p className="text-green-500 font-semibold dark:text-gray-50">
+                <p className="text-green-500 font-semibold dark:text-green-500">
                   Message sent successfully!
                 </p>
                 <button
@@ -93,9 +93,9 @@ const ContactIntro = () => {
           )}
           <label
             htmlFor="fullname"
-            className="text-gray-500 font-light mt-8 dark:text-gray-50"
+            className="text-gray-500 font-light mt-8 dark:text-gray-500"
           >
-            Name<span className="text-red-500 dark:text-gray-50">*</span>
+            Name<span className="text-red-500 dark:text-red-500">*</span>
           </label>
           <input
             type="text"
@@ -109,7 +109,7 @@ const ContactIntro = () => {
           />
           <label
             htmlFor="email"
-            className="text-gray-500 font-light mt-4 dark:text-gray-50"
+            className="text-gray-500 font-light mt-4 dark:text-gray-500"
           >
             E-mail<span className="text-red-500">*</span>
           </label>
@@ -125,7 +125,7 @@ const ContactIntro = () => {
           />
           <label
             htmlFor="message"
-            className="text-gray-500 font-light mt-4 dark:text-gray-50"
+            className="text-gray-500 font-light mt-4 dark:text-gray-500"
           >
             Message<span className="text-red-500">*</span>
           </label>
