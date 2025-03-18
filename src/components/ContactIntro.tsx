@@ -18,7 +18,6 @@ const ContactIntro = () => {
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     if (!emailPattern.test(email)) {
-      // Email address is not valid
       setFormErrors("Please enter a valid email address.");
       return;
     }
@@ -37,12 +36,11 @@ const ContactIntro = () => {
         setEmail("");
         setMessage("");
         // Update submission status
-        setIsSubmitted(true); // Update submission status
-        setIsModalOpen(true); // Open the success modal
+        setIsSubmitted(true);
+        setIsModalOpen(true);
         return;
       } else {
         const data = await res.json();
-        // Update form errors
         setFormErrors(data.error || 'Failed to send message');
         return;
       }
