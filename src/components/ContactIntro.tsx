@@ -24,7 +24,7 @@ const ContactIntro = () => {
     }
 
     try {
-      const res = await fetch("/api/contactForm", {
+      const res = await fetch("./api/contactForm", {
         method: "POST",
         body: JSON.stringify({ fullname, email, message }),
         headers: {
