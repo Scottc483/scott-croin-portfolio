@@ -24,15 +24,14 @@ const ContactIntro = () => {
     }
 
     try {
-      const res = await fetch("/api/contactForm", {
+      const res = await fetch("./api/contactForm", {
         method: "POST",
         body: JSON.stringify({ fullname, email, message }),
         headers: {
           "Content-Type": "application/json",
         },
       });
-      const data = await res.json();
-      if (data.message === "success") {
+      if (res.ok) {  // Check if status is 200-299
         // Reset form values
         setFullname("");
         setEmail("");
@@ -42,12 +41,14 @@ const ContactIntro = () => {
         setIsModalOpen(true); // Open the success modal
         return;
       } else {
+        const data = await res.json();
         // Update form errors
-        setFormErrors(data.message);
+        setFormErrors(data.error || 'Failed to send message');
         return;
       }
     } catch (err) {
       console.log(err);
+      setFormErrors('Failed to send message. Please try again.');
     }
   };
 
@@ -149,9 +150,6 @@ const ContactIntro = () => {
       
           </div>
         </form>
-        {/* <button onClick={() => {setIsModalOpen(true), setIsSubmitted(true)}} className="">
-              Open Modal
-        </button> */}
       </div>
     </div>
   );
