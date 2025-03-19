@@ -10,21 +10,20 @@ export async function POST(req: Request) {
         const body = await req.json();
         console.log('Request body:', body);
 
-        // Send notification email to you
-        const notificationEmail = await resend.emails.send({
-            from: 'Scott Croin <response@scottcroin.com>',
-            to: ['scottcroin.dev@gmail.com'],
-            subject: 'New Contact Form Submission',
-            react: EmailTemplate({ firstName: body.fullname, email: body.email, message: body.message }),
-        });
-
-        // Send thank you email to the user
-        const thankYouEmail = await resend.emails.send({
-            from: 'Scott Croin <response@scottcroin.com>',
-            to: [body.email],
-            subject: 'Thank you for contacting Scott Croin',
-            react: EmailResponseTemplate({ firstName: body.fullname }),
-        });
+        const [notificationEmail, thankYouEmail] = await Promise.all([
+            resend.emails.send({
+                from: 'Scott Croin <response@scottcroin.com>',
+                to: ['scottcroin.dev@gmail.com'],
+                subject: 'New Contact Form Submission',
+                react: EmailTemplate({ firstName: body.fullname, email: body.email, message: body.message }),
+            }),
+            resend.emails.send({
+                from: 'Scott Croin <response@scottcroin.com>',
+                to: [body.email],
+                subject: 'Thank you for contacting Scott Croin',
+                react: EmailResponseTemplate({ firstName: body.fullname }),
+            })
+        ]);
 
         if (notificationEmail.error || thankYouEmail.error) {
             console.error('Resend error:', notificationEmail.error || thankYouEmail.error);
