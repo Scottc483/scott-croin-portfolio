@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect, useRef, use } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -11,10 +11,12 @@ import {
 } from "react-icons/ai";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 import { BsFillPersonLinesFill } from "react-icons/bs";
+import { useModal } from "@/context/ModalContext";
 
 import "./nav.css";
 
 const Nav = () => {
+  const { isModalOpen } = useModal();
   const parentRef = useRef<HTMLDivElement>(null);
   const [navOpen, setNavOpen] = useState(false);
 
@@ -77,11 +79,13 @@ const Nav = () => {
     <>
       <div
         id="navBar"
-        className={`fixed top-0 w-full h-20  z-[1000] transition-all ${
-          navDetach
-            ? "shadow-md bg-green-200 rounded-b-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 border-b border-gray-100"
-            : "bg-offWhite"
-        } '`}
+        className={`fixed top-0 w-full h-20 z-[1000] transition-all duration-300 ${
+          isModalOpen 
+            ? '-translate-y-full' 
+            : navDetach
+              ? "shadow-md bg-green-200 rounded-b-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 border-b border-gray-100"
+              : "bg-offWhite"
+        }`}
       >
         <div className="flex justify-between items-center w-full h-full px-10 2xl-:px-16">
           <div>
@@ -233,7 +237,9 @@ const Nav = () => {
           </div>
         </div>
       </div>
-      <div className="fixed top-[70vh] right-0 hidden md:flex flex-col justify-center z-[1000]">
+      <div className={`fixed top-[70vh] right-0 hidden md:flex flex-col justify-center z-[1000] transition-all duration-300 ${
+        isModalOpen ? 'translate-x-full' : ''
+      }`}>
         <div className="lg:mr-5">
           <div className="flex flex-col items-center justify-center w-full mr-10  py-5">
             <div className="rounded-full bg-offWhite shadow-md shadow-gray-400 p-3 cursor-pointer hover:scale-110 hover:offWhite hover:bg-darkGrey ease-in duration-150">

@@ -1,3 +1,4 @@
+"use client";
 import "./globals.css";
 import { Inter } from "next/font/google";
 import Head from "next/head";
@@ -5,6 +6,7 @@ const inter = Inter({ subsets: ["latin"] });
 import Nav from "../components/Nav";
 import Footer from "@/components/Footer";
 import { useEffect, useRef, useState } from "react";
+import { ModalProvider } from "@/context/ModalContext";
 
 export const metadata = {
   title: "Scott Croin | Web Developer",
@@ -48,11 +50,13 @@ export default function RootLayout({
         <meta name="theme-color" content="#ffffff" />
       </Head>
       <body className="bg-darkGrey">
-        <main className={inter.className}>
-          <Nav />
-          {children}
-          <Footer />
-        </main>
+        <ModalProvider>
+          <main className={inter.className}>
+            <Nav />
+            {children}
+            <Footer />
+          </main>
+        </ModalProvider>
         <div id="globalLoader">
         <img src="/loadingSpinner.gif" alt="" />
       </div>
