@@ -14,6 +14,7 @@ const ContactIntro = () => {
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     setFormErrors("");
     e.preventDefault();
+    
 
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -30,7 +31,9 @@ const ContactIntro = () => {
           "Content-Type": "application/json",
         },
       });
-      if (res.ok) {  // Check if status is 200-299
+      if (res.ok) {  // Check if status is 200-2994
+
+
         // Reset form values
         setFullname("");
         setEmail("");
@@ -38,6 +41,7 @@ const ContactIntro = () => {
         // Update submission status
         setIsSubmitted(true);
         setIsModalOpen(true);
+
         return;
       } else {
         const data = await res.json();

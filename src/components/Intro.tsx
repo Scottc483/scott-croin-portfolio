@@ -8,7 +8,7 @@ const Intro = () => {
       <div className="bg-white rounded-lg shadow-md p-6 md:mx-20 m-5 max-w-3xl flex flex-1 justify-between flex-col md:flex-row items-start">
         <div className="w-full h-full flex items-center justify-center md:mr-5">
         <Image
-            src="/profilePicture.jpg"
+            src="/scott-profile-1.jpg"
             alt="profile picture"
             width={200}
             height={200}

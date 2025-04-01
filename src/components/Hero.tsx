@@ -2,6 +2,7 @@
 
 import React, { useEffect } from "react";
 import DrawBlob, { BlobType } from "blob-animated";
+import Image from "next/image";
 
 const Hero = () => {
   useEffect(() => {
@@ -40,14 +41,14 @@ const Hero = () => {
   return (
     <div className="flex justify-center relative">
       <div>
-        <img
+        <Image
           id="heroImage"
           src="/forest.jpg"
           alt="Picture of the author"
           width={500}
           height={500}
           className="hidden"
-          loading="eager"
+          priority
         />
         <canvas id="canvasExample" className="w-full max-w-3xl xl:max-w-4xl" />
       </div>
