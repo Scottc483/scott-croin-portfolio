@@ -63,6 +63,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
 
     emblaApi.on('select', onThumbSelect);
     emblaFullscreenApi.on('select', onFullscreenSelect);
+    
 
     return () => {
       emblaApi.off('select', onThumbSelect);
@@ -112,24 +113,28 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
               {images.map((image, index) => (
                 <div
                   key={index}
-                  className={`cursor-pointer flex items-center justify-center ${
+                  className={`cursor-pointer flex items-center justify-center z-50 ${
                     image.orientation === 'portrait'
                       ? 'flex-[0_0_100%] md:flex-[0_0_33.333%]'
                       : 'flex-[0_0_100%]'
                   }`}
-                  onClick={() => setSelectedImageIndex(index)}
+                  onClick={() =>{ 
+                    setSelectedImageIndex(index) 
+                
+                  }
+                }
                 >
-                  <div className={`relative m-4 ${
-                    image.orientation === 'portrait'
-                      ? 'w-[90%] aspect-[3/4]'
-                      : 'w-[95%] aspect-video'
-                  }`}>
+                  <div className={`relative m-4 `}>
                     <Image
                       src={image.url}
                       alt={`${title} screenshot ${index + 1}`}
                       width={500}
                       height={500}
-                      className="w-full h-full object-contain rounded-lg shadow-[0_4px_20px_rgba(0,0,0,0.2)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.3)] transition-shadow duration-300 bg-slate-800"
+                      className={`w-full h-full object-contain rounded-lg shadow-[0_4px_20px_rgba(0,0,0,0.2)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.3)] transition-shadow duration-300  p-8 ${
+                        image.orientation === 'portrait'
+                          ? 'bg-slate-800'
+                          : 'bg-white'
+                      }`}
                     />
                   </div>
                 </div>
@@ -199,12 +204,10 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
       {/* Fullscreen Modal - Keep showing one image at a time */}
       {selectedImageIndex !== null && (
         <div 
-          className="fixed inset-0 bg-black bg-opacity-90 z-[99999] flex items-center justify-center"
-          onClick={(e) => {
-            if (e.target === e.currentTarget) {
-              setSelectedImageIndex(null);
-              setIsModalOpen(false);
-            }
+          className="fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center"
+          onClick={() => {
+            setSelectedImageIndex(null);
+            setIsModalOpen(false);
           }}
         >
           <button
@@ -217,28 +220,31 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
             <XMarkIcon className="w-8 h-8" />
           </button>
 
-          {/* Navigation Buttons - Moved outside and wider */}
-          <button
-            className="absolute left-8 top-1/2 -translate-y-1/2 bg-white/10 hover:bg-white/20 p-4 rounded-full transition-all duration-200 hover:scale-110 z-[100000]"
-            onClick={(e) => {
-              e.stopPropagation();
-              scrollPrev(emblaFullscreenApi);
-            }}
+          <div 
+            className="max-w-[95vw] md:max-w-[80vw] max-h-[90vh] relative"
+            onClick={(e) => e.stopPropagation()}
           >
-            <ChevronLeftIcon className="w-8 h-8 text-black" />
-          </button>
-          <button
-            className="absolute right-8 top-1/2 -translate-y-1/2 bg-white/10 hover:bg-white/20 p-4 rounded-full transition-all duration-200 hover:scale-110 z-[100000]"
-            onClick={(e) => {
-              e.stopPropagation();
-              scrollNext(emblaFullscreenApi);
-            }}
-          >
-            <ChevronRightIcon className="w-8 h-8 text-black" />
-          </button>
+            {/* Navigation Buttons - Moved outside and wider */}
+            <button
+              className="absolute left-2 md:left-8 top-1/2 -translate-y-1/2 bg-white/10 hover:bg-white/20 p-2 md:p-4 rounded-full transition-all duration-200 hover:scale-110 z-[100000]"
+              onClick={(e) => {
+                e.stopPropagation();
+                scrollPrev(emblaFullscreenApi);
+              }}
+            >
+              <ChevronLeftIcon className="w-6 h-6 md:w-8 md:h-8 text-black" />
+            </button>
+            <button
+              className="absolute right-2 md:right-8 top-1/2 -translate-y-1/2 bg-white/10 hover:bg-white/20 p-2 md:p-4 rounded-full transition-all duration-200 hover:scale-110 z-[100000]"
+              onClick={(e) => {
+                e.stopPropagation();
+                scrollNext(emblaFullscreenApi);
+              }}
+            >
+              <ChevronRightIcon className="w-6 h-6 md:w-8 md:h-8 text-black" />
+            </button>
 
-          {/* Fullscreen Carousel */}
-          <div className="max-w-[80vw] max-h-[90vh] relative"> {/* Reduced max-width to make room for arrows */}
+            {/* Fullscreen Carousel */}
             <div className="relative overflow-hidden" ref={emblaFullscreenRef}>
               <div className="flex">
                 {images.map((image, index) => (

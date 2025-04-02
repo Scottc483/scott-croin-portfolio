@@ -1,7 +1,7 @@
-
 import "./globals.css";
 import { Inter } from "next/font/google";
 import Head from "next/head";
+import Image from "next/image";
 const inter = Inter({ subsets: ["latin"] });
 import Nav from "../components/Nav";
 import Footer from "@/components/Footer";
@@ -58,8 +58,14 @@ export default function RootLayout({
           </main>
         </ModalProvider>
         <div id="globalLoader">
-        <img src="/loadingSpinner.gif" alt="" />
-      </div>
+          <Image
+            src="/loadingSpinner.gif"
+            alt="Loading spinner"
+            width={50}
+            height={50}
+            priority
+          />
+        </div>
       </body>
     </html>
   );
