@@ -104,7 +104,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   return (
     <div className="bg-white rounded-lg shadow-lg overflow-hidden">
       <div className="p-6">
-        <h3 className="text-2xl font-bold text-gray-900 mb-4">{title}</h3>
+      
         
         {/* Thumbnail Carousel */}
         <div className="relative mb-6">
@@ -158,6 +158,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         </div>
 
         {/* Description */}
+        <h3 className="text-2xl font-bold text-gray-900 mb-4">{title}</h3>
         <div className="space-y-4 mb-6">
           {description.map((paragraph, index) => (
             <p key={index} className="text-gray-600">
