@@ -22,7 +22,7 @@ export default function Home() {
       </section>
       <section
         id="skills"
-        className="flex flex-1 mx-auto pt-[10rem] bg-darkGrey justify-center  z-[100]"
+        className="flex flex-1 mx-auto pt-[10rem] bg-darkGrey justify-center shapedividers_com-7110  z-[100]"
       >
         <Technologies />
       </section>
